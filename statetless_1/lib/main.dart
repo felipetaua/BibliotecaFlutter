@@ -18,6 +18,7 @@ class Aplicativo extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           leading: Icon(Icons.android_outlined, size: 40),
@@ -33,18 +34,46 @@ class Aplicativo extends StatelessWidget{
             // children serve para colocar vários widgets um atrás do outro
             children: [
               Container( 
-                color: const Color.fromARGB(255, 46, 46, 51),
-                height: 552,
-                width: 393,
+                height: 550,
+                width: 390,
                 padding: EdgeInsets.only(top: 250),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 46, 46, 51),
+                  borderRadius: BorderRadius.all(Radius.circular(32)),
+                ),
                 child: Text(
                   "Olá mundo!", textAlign: TextAlign.center,
                    style: TextStyle(fontSize: 30),
                 ),
               ),
+
+              Row(
+                // tipo de espaçamento
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                 // widget com filhos
+                children: [
+                  Icon(Icons.leaderboard, color: Colors.deepPurple[700],),
+                  Icon(Icons.person, color: Colors.deepPurple[700],),
+                ],
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FloatingActionButton(
+                    child: Icon(Icons.add),
+                    onPressed: (){
+                      print("parabens! Funcionou!");
+                    },
+                  ),
+                ],
+              ),
             ],
           ),
         ),
+
+
+        
       ),
     );
       
