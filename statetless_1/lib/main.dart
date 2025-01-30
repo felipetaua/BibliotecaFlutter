@@ -61,6 +61,7 @@ class Aplicativo extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FloatingActionButton(
+                    backgroundColor: Colors.deepOrange,
                     child: Icon(Icons.add),
                     onPressed: (){
                       print("parabens! Funcionou!");
@@ -72,8 +73,12 @@ class Aplicativo extends StatelessWidget{
           ),
         ),
 
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(icon: Icon(Icons.school), label: "Escola"),
+        BottomNavigationBarItem(icon: Icon(Icons.search), label: "Busca"),
+        BottomNavigationBarItem(icon: Icon(Icons.gavel_rounded), label: "Configuração"),
+      ]),
 
-        
       ),
     );
       
