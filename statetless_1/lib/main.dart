@@ -7,8 +7,7 @@ void main() {
 
 // Criando minha classe própria
 // stateless é estático, não muda, carrega só uma vez
-class Aplicativo extends StatelessWidget{
-  
+class Aplicativo extends StatelessWidget {
   const Aplicativo({super.key});
 
   // @voerride quer dizer que vai sobrescrever a tela
@@ -21,7 +20,6 @@ class Aplicativo extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.android_outlined, size: 40),
           title: Text('Flutter é divertido!'),
           backgroundColor: Colors.deepPurple[700],
         ),
@@ -33,7 +31,7 @@ class Aplicativo extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             // children serve para colocar vários widgets um atrás do outro
             children: [
-              Container( 
+              Container(
                 height: 550,
                 width: 390,
                 padding: EdgeInsets.only(top: 250),
@@ -42,28 +40,32 @@ class Aplicativo extends StatelessWidget{
                   borderRadius: BorderRadius.all(Radius.circular(32)),
                 ),
                 child: Text(
-                  "Olá mundo!", textAlign: TextAlign.center,
-                   style: TextStyle(fontSize: 30),
+                  "Olá mundo!",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 30),
                 ),
               ),
-
               Row(
                 // tipo de espaçamento
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                 // widget com filhos
+                // widget com filhos
                 children: [
-                  Icon(Icons.leaderboard, color: Colors.deepPurple[700],),
-                  Icon(Icons.person, color: Colors.deepPurple[700],),
+                  Icon(
+                    Icons.leaderboard,
+                    color: Colors.deepPurple[700],
+                  ),
+                  Icon(
+                    Icons.person,
+                    color: Colors.deepPurple[700],
+                  ),
                 ],
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FloatingActionButton(
-                    backgroundColor: Colors.deepOrange,
                     child: Icon(Icons.add),
-                    onPressed: (){
+                    onPressed: () {
                       print("parabens! Funcionou!");
                     },
                   ),
@@ -73,14 +75,40 @@ class Aplicativo extends StatelessWidget{
           ),
         ),
 
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.school), label: "Escola"),
-        BottomNavigationBarItem(icon: Icon(Icons.search), label: "Busca"),
-        BottomNavigationBarItem(icon: Icon(Icons.gavel_rounded), label: "Configuração"),
-      ]),
+        bottomNavigationBar: BottomNavigationBar(items: [
+          BottomNavigationBarItem(icon: Icon(Icons.school), label: "Escola"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Busca"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.gavel_rounded), label: "Configuração"),
+        ]),
 
+        drawer: Drawer(
+          backgroundColor: Colors.deepPurple[500],
+          child: ListView(
+            padding: EdgeInsets.zero, //zerar padding
+            children: [
+              DrawerHeader(child: Text('texto de cabeçalho')),
+              ListTile(
+                leading: Icon(Icons.account_circle),
+                title: Text("Perfil"),
+                onTap: () {
+                  print("entrou no perfil");
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text("Página Inicial"),
+                onTap: () { },
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text("Configurações"),
+                onTap: () { },
+              ),
+            ],
+          ),
+        ),
       ),
     );
-      
   }
 }
