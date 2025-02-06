@@ -31,7 +31,22 @@ class PaginaInicial extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Text("Conteúdo da página inicial"),
+              Text(
+                "O que é Flutter",
+                style: TextStyle(fontSize: 20),
+              ),
+              Text(
+                '''Flutter é um framework do Goofle para criar aplicativos.\n Serve para Android, ios, web, desktop, entre outros, usando a linguagem Dart.\n''',
+                textAlign: TextAlign.center,
+              ),
+              ListTile(
+                leading: Icon(Icons.circle_outlined),
+                title: Text("Statefull: Com estado dinâmico, a tela muda"),
+              ),
+              ListTile(
+                leading: Icon(Icons.circle_outlined),
+                title: Text("Stateless: Imutável, a tela sempre é a mesma!"),
+              ),
             ],
           ),
         ),
